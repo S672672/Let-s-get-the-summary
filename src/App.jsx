@@ -2,6 +2,8 @@ import React from "react";
 import { useState,useEffect } from "react";
 import BookCard from "./Components/Bookcard";
 import SummaryModal from "./Components/SummaryModal";
+import Header from "./Components/Header";
+import Sidebar from "./Components/Sidebar";
 
 export default function App() {
   const [books, setBooks] = useState([]);
@@ -28,7 +30,8 @@ export default function App() {
 
   return (
     <div className="flex">
-      {/* <Sidebar categories={} onSelectCategory={setSelectedCategory} /> */}
+    <Header />
+      <Sidebar categories='smith' onSelectCategory={setSelectedCategory} />
       <main className="w-3/4 p-8 grid grid-cols-3 gap-8">
         {filteredBooks.map(book => (
           <BookCard key={book.id} book={book} onSummaryClick={handleSummaryClick} />
