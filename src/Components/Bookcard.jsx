@@ -1,16 +1,25 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const BookCard = ({ title, author, genre, rating, summary }) => {
+function BookCard({ book }) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/summary/${book.id}`);
+  };
+
   return (
-    <div className="bg-white rounded-lg shadow-md p-4">
-      <h2 className="text-xl font-semibold mb-2">{title}</h2>
-      <p className="text-gray-700 mb-1"><strong>Author:</strong> {author}</p>
-      <p className="text-gray-700 mb-1"><strong>Genre:</strong> {genre}</p>
-      <p className="text-gray-700 mb-1"><strong>Rating:</strong> {rating} ⭐</p>
-      <p className="text-gray-800 mt-2"><strong>Summary:</strong></p>
-      <p className="text-gray-600">{summary}</p>
+    <div
+      onClick={handleCardClick}
+      className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+    >
+      <h2 className="text-2xl font-bold mb-2">{book.title}</h2>
+      <h3 className="text-lg mb-2 text-gray-700">by {book.writer}</h3>
+      <div className="mt-4">
+        <span className="text-yellow-500 font-bold">{book.rating}</span> / 5
+      </div>
     </div>
   );
-};
+}
 
 export default BookCard;

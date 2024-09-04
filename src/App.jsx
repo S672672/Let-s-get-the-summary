@@ -1,43 +1,58 @@
-import React from "react";
-import { useState,useEffect } from "react";
-import BookCard from "./Components/Bookcard";
-import SummaryModal from "./Components/SummaryModal";
-import Header from "./Components/Header";
-import Sidebar from "./Components/Sidebar";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import Category from './Components/Category';
+import BookCard from './Components/Bookcard'
+import Summary from './Components/Summary';
 
-export default function App() {
-  const [books, setBooks] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [selectedBook, setSelectedBook] = useState(null);
-  const [isSummaryOpen, setIsSummaryOpen] = useState(false);
+const booksData = [
+  {
+    id: 1,
+    title: 'Book 1',
+    category: 'Fiction',
+    writer: 'Author A',
+    summary: 'This is the summary of Book 1.',
+    rating: 4.5,
+  },
+  // Add more books here
+];
 
-  useEffect(() => {
-    // Fetch books from API
-  }, []);
+function App() {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const handleSummaryClick = (book) => {
-    setSelectedBook(book);
-    setIsSummaryOpen(true);
-  };
-
-  const closeSummary = () => {
-    setIsSummaryOpen(false);
-  };
-
-  const filteredBooks = selectedCategory
-    ? books.filter(book => book.category === selectedCategory)
-    : books;
+  const filteredBooks = booksData.filter(
+    (book) =>
+      (selectedCategory === 'All' || book.category === selectedCategory) &&
+      (book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        book.writer.toLowerCase().includes(searchQuery.toLowerCase()))
+  );
 
   return (
-    <div className="flex">
-    <Header />
-      <Sidebar categories='smith' onSelectCategory={setSelectedCategory} />
-      <main className="w-3/4 p-8 grid grid-cols-3 gap-8">
-        {filteredBooks.map(book => (
-          <BookCard key={book.id} book={book} onSummaryClick={handleSummaryClick} />
-        ))}
-      </main>
-      <SummaryModal book={selectedBook} isOpen={isSummaryOpen} onClose={closeSummary} />
+    <Router>
+    <div className="min-h-screen bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 text-white">
+      <Navbar setSearchQuery={setSearchQuery} />
+      <Category setSelectedCategory={setSelectedCategory} />
+      <div className="max-w-7xl mx-auto p-6">
+        <h1 className="text-4xl font-bold text-center mb-6">Explore Books by Category</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredBooks.map((book) => (
+            <BookCard key={book.id} book={book} />
+          ))}
+        </div>
+        {filteredBooks.length === 0 && (
+          <div className="text-center text-2xl mt-8">
+            No books found in this category.
+          </div>
+        )}
+      </div>
+      <Routes>
+        <Route path="/summary/:id" element={<Summary books={booksData} />} />
+      </Routes>
     </div>
+  </Router>
+  
   );
 }
+
+export default App;
