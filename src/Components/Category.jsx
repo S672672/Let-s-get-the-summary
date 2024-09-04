@@ -34,7 +34,7 @@ function Category({ setSelectedCategory }) {
           <button
             key={index}
             onClick={() => handleCategoryClick(category)}
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300"
+            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-200 transition duration-300"
           >
             {category}
           </button>

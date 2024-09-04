@@ -12,7 +12,7 @@ const booksData = [
     category: 'Fiction',
     writer: 'Author A',
     summary: 'This is the summary of Book 1.',
-    rating: 4.5,
+    rating: `4.5/5`
   },
   // Add more books here
 ];
