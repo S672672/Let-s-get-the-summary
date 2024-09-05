@@ -28,8 +28,10 @@ function Category({ setSelectedCategory }) {
   };
 
   return (
-    <div className="bg-white shadow-md p-4 mt-4">
-      <div className="max-w-7xl mx-auto flex justify-around items-center">
+    <div className="bg-white shadow-md p-4 mt-2">
+    <div className='flex items-center justify-center'>
+    <h1 className="text-4xl font-bold text-center mb-6 text-black">Explore Books by Category</h1>
+      <div className="max-w-7xl mx-auto flex justify-around gap-2 items-center">
         {visibleCategories.map((category, index) => (
           <button
             key={index}
@@ -61,6 +63,7 @@ function Category({ setSelectedCategory }) {
             </div>
           )}
         </div>
+      </div>
       </div>
     </div>
   );

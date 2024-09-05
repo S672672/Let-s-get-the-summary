@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function BookCard({ book }) {
   const navigate = useNavigate();
@@ -15,6 +15,7 @@ function BookCard({ book }) {
     >
       <h2 className="text-2xl font-bold mb-2">{book.title}</h2>
       <h3 className="text-lg mb-2 text-gray-700">by {book.writer}</h3>
+
       <div className="mt-4">
         <span className="text-yellow-500 font-bold">{book.rating}</span> / 5
       </div>

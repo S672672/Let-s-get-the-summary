@@ -14,6 +14,14 @@ const booksData = [
     summary: 'This is the summary of Book 1.',
     rating: `4.5/5`
   },
+  {
+    id:2,
+    title:'sher ka jungle',
+    category:'History',
+    writer:'SMith',
+    summary:'This is the book about sher and sherni',
+    rating:'4.5/5'
+  }
   // Add more books here
 ];
 
@@ -34,7 +42,6 @@ function App() {
       <Navbar setSearchQuery={setSearchQuery} />
       <Category setSelectedCategory={setSelectedCategory} />
       <div className="max-w-7xl mx-auto p-6">
-        <h1 className="text-4xl font-bold text-center mb-6">Explore Books by Category</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredBooks.map((book) => (
             <BookCard key={book.id} book={book} />
