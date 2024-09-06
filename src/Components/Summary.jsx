@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa';
 
 function Summary({ books }) {
   const { id } = useParams();
@@ -7,7 +8,7 @@ function Summary({ books }) {
 
   if (!book) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
         <div className="text-center text-red-500 text-2xl">
           Book not found
         </div>
@@ -20,15 +21,24 @@ function Summary({ books }) {
       <Link to="/" className="text-white hover:text-gray-200 text-lg font-semibold mb-4 inline-block">
         &larr; Back to Books
       </Link>
-      <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
-        <div className="bg-cover bg-center h-64" style={{ backgroundImage: `url('https://source.unsplash.com/random/800x600?book')` }}></div>
-        <div className="p-8">
-          <h2 className="text-5xl font-extrabold mb-4 text-gray-800">{book.title}</h2>
-          <h3 className="text-3xl text-gray-600 mb-4">by {book.writer}</h3>
-          <p className="text-lg text-gray-700 leading-relaxed mb-6">{book.summary}</p>
-          <div className="flex items-center">
-            <span className="text-yellow-400 text-2xl font-bold">{book.rating}</span>
-            <span className="text-gray-600 text-xl ml-2">/ 5</span>
+      <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+      <div className="relative">
+          <div className="bg-cover bg-center h-40" style={{ backgroundImage: `url('https://img-mm.manoramaonline.com/content/dam/mm/ml/lifestyle/literature1/images/2016/Aug/9/mein-kamph1.jpg')` }}></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+        </div>
+        <div className="p-8 bg-white rounded-t-2xl">
+          <h2 className="text-4xl font-extrabold text-amber-500">{book.title}</h2>
+          <h3 className="text-xl text-gray-600">by {book.writer}</h3>
+          <div className="flex items-center space-x-2 mb-6">
+            <FaStar className="text-yellow-400 text-2xl" />
+            <span className="text-xl font-bold text-gray-800">{book.rating}</span>
+            <span className="text-gray-600 text-xl ml-2"></span>
+          </div>
+          <div className="bg-yellow-50 p-6 rounded-xl shadow-lg border border-yellow-200">
+            <h4 className="text-2xl font-semibold mb-4 text-gray-800">Summary</h4>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              {book.summary}
+            </p>
           </div>
         </div>
       </div>
@@ -37,4 +47,3 @@ function Summary({ books }) {
 }
 
 export default Summary;
-
