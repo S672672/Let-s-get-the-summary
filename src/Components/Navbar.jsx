@@ -4,7 +4,7 @@ function Navbar({ setSearchQuery }) {
   return (
     <nav className="bg-white shadow-md p-4">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-xl font-bold">Book Explorer</div>
+        <div className="text-xl font-bold text-blue-400">Book Explorer</div>
         <input
           type="text"
           placeholder="Search by title, writer, or type..."

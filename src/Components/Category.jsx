@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const categories = [
+  'All',
   'Fiction',
   'Non-Fiction',
   'Science',
