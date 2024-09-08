@@ -19,7 +19,6 @@ function BookCard({ book }) {
       <h2 className="relative text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-pink-300 to-blue-400 drop-shadow-lg transition-transform duration-300 transform hover:translate-y-1">
         {book.title}
       </h2>
-
       <h3 className="relative text-lg text-white italic font-medium mb-4 drop-shadow-lg transition-transform duration-300 transform hover:translate-x-2 hover:text-yellow-300">
         by {book.writer}
       </h3>

@@ -12,7 +12,8 @@ const booksData = [
     category: 'Fiction',
     writer: 'Author A',
     summary: 'This is the summary of Book 1.',
-    rating: `4.5/5`
+    rating: `4.5/5`,
+    backgroundImage: 'https://img-mm.manoramaonline.com/content/dam/mm/ml/lifestyle/literature1/images/2016/Aug/9/mein-kamph1.jpg'
   },
   {
     id:2,
@@ -21,7 +22,72 @@ const booksData = [
     writer:'SMith',
     summary:'This is the book about sher and sherni',
     rating:'4.5/5'
-  }
+  },
+  {
+    id:2,
+    title:'sher ka jungle',
+    category:'History',
+    writer:'SMith',
+    summary:'This is the book about sher and sherni',
+    rating:'4.5/5'
+  },
+  {
+    id:2,
+    title:'sher ka jungle',
+    category:'History',
+    writer:'SMith',
+    summary:'This is the book about sher and sherni',
+    rating:'4.5/5'
+  },
+  {
+    id:2,
+    title:'sher ka jungle',
+    category:'History',
+    writer:'SMith',
+    summary:'This is the book about sher and sherni',
+    rating:'4.5/5'
+  },
+  {
+    id:2,
+    title:'sher ka jungle',
+    category:'History',
+    writer:'SMith',
+    summary:'This is the book about sher and sherni',
+    rating:'4.5/5'
+  },
+  {
+    id:2,
+    title:'sher ka jungle',
+    category:'History',
+    writer:'SMith',
+    summary:'This is the book about sher and sherni',
+    rating:'4.5/5'
+  },
+
+  {
+    id:2,
+    title:'sher ka jungle',
+    category:'History',
+    writer:'SMith',
+    summary:'This is the book about sher and sherni',
+    rating:'4.5/5'
+  },
+  {
+    id:2,
+    title:'sher ka jungle',
+    category:'History',
+    writer:'SMith',
+    summary:'This is the book about sher and sherni',
+    rating:'4.5/5'
+  },
+  {
+    id:2,
+    title:'sher ka jungle',
+    category:'History',
+    writer:'SMith',
+    summary:'This is the book about sher and sherni',
+    rating:'4.5/5'
+  },
   // Add more books here
 ];
 

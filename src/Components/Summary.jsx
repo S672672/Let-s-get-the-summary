@@ -23,7 +23,7 @@ function Summary({ books }) {
       </Link>
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
       <div className="relative">
-          <div className="bg-cover bg-center h-40" style={{ backgroundImage: `url('https://img-mm.manoramaonline.com/content/dam/mm/ml/lifestyle/literature1/images/2016/Aug/9/mein-kamph1.jpg')` }}></div>
+          <div className="bg-cover bg-center h-40" style={{ backgroundImage: `url(${book.backgroundImage})` }}></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
         </div>
         <div className="p-8 bg-white rounded-t-2xl">
